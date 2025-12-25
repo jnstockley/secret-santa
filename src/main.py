@@ -177,7 +177,6 @@ def main():
     writer(secret_santa)
     for i in range(0, len(secret_santa)):
         send_email(secret_santa[i], debug)
-    exit(0)
 
 
 if __name__ == "__main__":
