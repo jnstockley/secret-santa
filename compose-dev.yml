@@ -1,11 +1,11 @@
 ---
-name: Python Starter Project (Dev)
+name: Python Secret Santa (Dev)
 services:
-  python-starter:
+  secret-santa:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: python-starter-dev
+    container_name: secret-santa-dev
     env_file:
       - .env
     # Add ports if needed
@@ -31,7 +31,7 @@ services:
           path: uv.lock
         - action: sync+restart
           path: compose-dev.yml
-          target: python-starter
+          target: secret-santa
         - action: sync+restart
           path: .env
-          target: python-starter
+          target: secret-santa
