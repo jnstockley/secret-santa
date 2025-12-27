@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import datetime
 import json
 import random
@@ -182,11 +181,4 @@ def main():
 
 if __name__ == "__main__":
     load_dotenv()
-=======
-def main():
-    print("Hello from python-starter!")
-
-
-if __name__ == "__main__":
->>>>>>> external/main
     main()
