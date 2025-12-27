@@ -179,8 +179,5 @@ scripts
 tests
 data/
 logs/
-<<<<<<< HEAD
 *.csv
 *.json
-=======
->>>>>>> external/main
