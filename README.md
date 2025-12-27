@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Secret Santa
+=======
+# Python Starter
+>>>>>>> external/main
 
 ## Steps to set up
 1. Create a new repository in GitHub using this repository as a template

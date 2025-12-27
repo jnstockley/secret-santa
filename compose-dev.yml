@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 name: Python Secret Santa (Dev)
 services:
   secret-santa:
@@ -6,6 +7,15 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: secret-santa-dev
+=======
+name: Python Starter Project (Dev)
+services:
+  python-starter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: python-starter-dev
+>>>>>>> external/main
     env_file:
       - .env
     # Add ports if needed
@@ -31,7 +41,14 @@ services:
           path: uv.lock
         - action: sync+restart
           path: compose-dev.yml
+<<<<<<< HEAD
           target: secret-santa
         - action: sync+restart
           path: .env
           target: secret-santa
+=======
+          target: python-starter
+        - action: sync+restart
+          path: .env
+          target: python-starter
+>>>>>>> external/main

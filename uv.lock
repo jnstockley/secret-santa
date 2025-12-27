@@ -50,6 +50,7 @@ wheels = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "js-secret-santa"
 version = "1.0.0"
 source = { virtual = "." }
@@ -57,6 +58,11 @@ dependencies = [
     { name = "pandas" },
     { name = "python-dotenv" },
 ]
+=======
+name = "js-python-starter"
+version = "0.1.0"
+source = { virtual = "." }
+>>>>>>> external/main
 
 [package.dev-dependencies]
 dev = [
@@ -66,10 +72,13 @@ dev = [
 ]
 
 [package.metadata]
+<<<<<<< HEAD
 requires-dist = [
     { name = "pandas", specifier = "==2.3.3" },
     { name = "python-dotenv", specifier = "==1.2.1" },
 ]
+=======
+>>>>>>> external/main
 
 [package.metadata.requires-dev]
 dev = [
@@ -79,6 +88,7 @@ dev = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "numpy"
 version = "2.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -129,6 +139,8 @@ wheels = [
 ]
 
 [[package]]
+=======
+>>>>>>> external/main
 name = "packaging"
 version = "24.2"
 source = { registry = "https://pypi.org/simple" }
@@ -138,6 +150,7 @@ wheels = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "pandas"
 version = "2.3.3"
 source = { registry = "https://pypi.org/simple" }
@@ -178,6 +191,8 @@ wheels = [
 ]
 
 [[package]]
+=======
+>>>>>>> external/main
 name = "pluggy"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -215,6 +230,7 @@ wheels = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "python-dateutil"
 version = "2.9.0.post0"
 source = { registry = "https://pypi.org/simple" }
@@ -245,6 +261,8 @@ wheels = [
 ]
 
 [[package]]
+=======
+>>>>>>> external/main
 name = "ruff"
 version = "0.13.2"
 source = { registry = "https://pypi.org/simple" }
@@ -269,6 +287,7 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ee/bd/d9f33a73de84fafd0146c6fba4f497c4565fe8fa8b46874b8e438869abc2/ruff-0.13.2-py3-none-win_amd64.whl", hash = "sha256:17d95fb32218357c89355f6f6f9a804133e404fc1f65694372e02a557edf8585", size = 13324004, upload-time = "2025-09-25T14:54:06.05Z" },
     { url = "https://files.pythonhosted.org/packages/c3/12/28fa2f597a605884deb0f65c1b1ae05111051b2a7030f5d8a4ff7f4599ba/ruff-0.13.2-py3-none-win_arm64.whl", hash = "sha256:da711b14c530412c827219312b7d7fbb4877fb31150083add7e8c5336549cea7", size = 12484437, upload-time = "2025-09-25T14:54:08.022Z" },
 ]
+<<<<<<< HEAD
 
 [[package]]
 name = "six"
@@ -287,3 +306,5 @@ sdist = { url = "https://files.pythonhosted.org/packages/5e/a7/c202b344c5ca7daf3
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c7/b0/003792df09decd6849a5e39c28b513c06e84436a54440380862b5aeff25d/tzdata-2025.3-py2.py3-none-any.whl", hash = "sha256:06a47e5700f3081aab02b2e513160914ff0694bce9947d6b76ebd6bf57cfc5d1", size = 348521, upload-time = "2025-12-13T17:45:33.889Z" },
 ]
+=======
+>>>>>>> external/main
