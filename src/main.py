@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import datetime
 import json
 import random
@@ -177,8 +178,27 @@ def main():
     writer(secret_santa)
     for i in range(0, len(secret_santa)):
         send_email(secret_santa[i], debug)
+=======
+import sys
+
+from dotenv import load_dotenv
+
+from util.healthcheck import healthcheck
+from util.logging import logger
+
+
+def main():
+    logger.info("Hello from python-starter!")
+>>>>>>> external/main
 
 
 if __name__ == "__main__":
     load_dotenv()
+<<<<<<< HEAD
     main()
+=======
+    if len(sys.argv) > 1 and sys.argv[1] == "healthcheck":
+        healthcheck()
+    else:
+        main()
+>>>>>>> external/main

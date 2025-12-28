@@ -54,7 +54,10 @@ name = "js-secret-santa"
 version = "1.0.0"
 source = { virtual = "." }
 dependencies = [
+<<<<<<< HEAD
     { name = "pandas" },
+=======
+>>>>>>> external/main
     { name = "python-dotenv" },
 ]
 
@@ -66,10 +69,14 @@ dev = [
 ]
 
 [package.metadata]
+<<<<<<< HEAD
 requires-dist = [
     { name = "pandas", specifier = "==2.3.3" },
     { name = "python-dotenv", specifier = "==1.2.1" },
 ]
+=======
+requires-dist = [{ name = "python-dotenv", specifier = "==1.2.1" }]
+>>>>>>> external/main
 
 [package.metadata.requires-dev]
 dev = [
@@ -215,6 +222,7 @@ wheels = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "python-dateutil"
 version = "2.9.0.post0"
 source = { registry = "https://pypi.org/simple" }
@@ -227,6 +235,8 @@ wheels = [
 ]
 
 [[package]]
+=======
+>>>>>>> external/main
 name = "python-dotenv"
 version = "1.2.1"
 source = { registry = "https://pypi.org/simple" }
@@ -236,6 +246,7 @@ wheels = [
 ]
 
 [[package]]
+<<<<<<< HEAD
 name = "pytz"
 version = "2025.2"
 source = { registry = "https://pypi.org/simple" }
@@ -245,6 +256,8 @@ wheels = [
 ]
 
 [[package]]
+=======
+>>>>>>> external/main
 name = "ruff"
 version = "0.13.2"
 source = { registry = "https://pypi.org/simple" }
