@@ -11,8 +11,8 @@ import os
 
 import pandas as pd
 
-from src.logger import logger
 from src.util.healthcheck import healthcheck
+from src.util.logging import logger
 
 
 def matcher(people, person_filter: dict = None):
