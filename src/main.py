@@ -2,6 +2,7 @@ import datetime
 import json
 import random
 import smtplib
+import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -10,7 +11,8 @@ import os
 
 import pandas as pd
 
-from src.logger import logger
+from src.util.healthcheck import healthcheck
+from src.util.logging import logger
 
 
 def matcher(people, person_filter: dict = None):
@@ -181,4 +183,7 @@ def main():
 
 if __name__ == "__main__":
     load_dotenv()
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "healthcheck":
+        healthcheck()
+    else:
+        main()
