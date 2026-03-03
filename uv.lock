@@ -106,10 +106,14 @@ dev = [
 ]
 
 [package.metadata]
+<<<<<<< HEAD
 requires-dist = [
     { name = "pandas", specifier = "==3.0.1" },
     { name = "python-dotenv", specifier = "==1.2.2" },
 ]
+=======
+requires-dist = [{ name = "python-dotenv", specifier = "==1.2.2" }]
+>>>>>>> external/main
 
 [package.metadata.requires-dev]
 dev = [
