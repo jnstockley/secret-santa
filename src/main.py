@@ -83,9 +83,7 @@ def send_email(secret_santa, debug):
     receiver_email = secret_santa["Gifter"]["Email"]
     password = os.getenv("SMTP_PASSWORD")
     message = MIMEMultipart("alternative")
-    current_year = datetime.datetime.now(
-        tz=ZoneInfo("America/Chicago")
-    ).year
+    current_year = datetime.datetime.now(tz=ZoneInfo("America/Chicago")).year
     message["Subject"] = f"Your Secret Santa has Arrived for {current_year}!"
     message["From"] = sender_email
     message["To"] = receiver_email
