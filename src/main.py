@@ -82,7 +82,9 @@ def send_email(secret_santa, debug):
     receiver_email = secret_santa["Gifter"]["Email"]
     password = os.getenv("SMTP_PASSWORD")
     message = MIMEMultipart("alternative")
-    current_year = datetime.datetime.now(tz=datetime.timezone.tzname("America/Chicago")).year
+    current_year = datetime.datetime.now(
+        tz=datetime.timezone.tzname("America/Chicago")
+    ).year
     message["Subject"] = f"Your Secret Santa has Arrived for {current_year}!"
     message["From"] = sender_email
     message["To"] = receiver_email
@@ -141,16 +143,12 @@ def writer(secret_santa):
 
 # Main function that runs the program
 def main():
-    interactive_mode: bool = (
-        os.getenv("INTERACTIVE_MODE", str(True)).lower() == "true"
-    )
+    interactive_mode: bool = os.getenv("INTERACTIVE_MODE", str(True)).lower() == "true"
     debug = True
 
     if not interactive_mode:
         logger.info("Running in non-interactive mode")
-        debug: bool = (
-            os.getenv("DRY_RUN", str(True)).lower() == "true"
-        )
+        debug: bool = os.getenv("DRY_RUN", str(True)).lower() == "true"
         csv_file = os.getenv("FILE_PATH", "secret_santa.csv")
         logger.info(f"CSV File Path: {csv_file}")
         logger.info(f"Debug Mode: {debug}")
