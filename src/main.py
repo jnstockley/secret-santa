@@ -1,28 +1,27 @@
 import datetime
 import json
+import os
 import random
 import smtplib
 import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from dotenv import load_dotenv
-import os
-
 import pandas as pd
+from dotenv import load_dotenv
 
 from src.util.healthcheck import healthcheck
 from src.util.logging import logger
 
 
-def matcher(people, person_filter: dict = None):
+def matcher(people, person_filter: dict | None = None):
     while True:
         matches = []
         giftees = people.copy()
         random.shuffle(giftees)
         gifters = people.copy()
         random.shuffle(gifters)
-        for i in range(0, len(people)):
+        for i in range(len(people)):
             skip = False
             # Check if gifter and giftee are the same person
             if (
@@ -43,7 +42,7 @@ def matcher(people, person_filter: dict = None):
                 for person in person_filter:
                     if (
                         person is not None
-                        and gifters[i]["Email"] in person.keys()
+                        and gifters[i]["Email"] in person
                         and giftees[i]["Email"] in person[gifters[i]["Email"]]
                     ):
                         logger.warning(
@@ -83,7 +82,7 @@ def send_email(secret_santa, debug):
     receiver_email = secret_santa["Gifter"]["Email"]
     password = os.getenv("SMTP_PASSWORD")
     message = MIMEMultipart("alternative")
-    current_year = datetime.datetime.now().year
+    current_year = datetime.datetime.now(tz=datetime.timezone.tzname("America/Chicago")).year
     message["Subject"] = f"Your Secret Santa has Arrived for {current_year}!"
     message["From"] = sender_email
     message["To"] = receiver_email
@@ -143,18 +142,18 @@ def writer(secret_santa):
 # Main function that runs the program
 def main():
     interactive_mode: bool = (
-        True if os.getenv("INTERACTIVE_MODE", str(True)).lower() == "true" else False
+        os.getenv("INTERACTIVE_MODE", str(True)).lower() == "true"
     )
     debug = True
 
     if not interactive_mode:
         logger.info("Running in non-interactive mode")
         debug: bool = (
-            True if os.getenv("DRY_RUN", str(True)).lower() == "true" else False
+            os.getenv("DRY_RUN", str(True)).lower() == "true"
         )
         csv_file = os.getenv("FILE_PATH", "secret_santa.csv")
-        logger.info("CSV File Path: {}".format(csv_file))
-        logger.info("Debug Mode: {}".format(debug))
+        logger.info(f"CSV File Path: {csv_file}")
+        logger.info(f"Debug Mode: {debug}")
     else:
         csv_file = input("Provide Full path to CSV file: ")
         debug_question = input("Enable debug mode (Y/n): ")
@@ -177,7 +176,7 @@ def main():
 
     secret_santa = matcher(people)
     writer(secret_santa)
-    for i in range(0, len(secret_santa)):
+    for i in range(len(secret_santa)):
         send_email(secret_santa[i], debug)
 
 
