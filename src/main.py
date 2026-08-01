@@ -6,6 +6,7 @@ import smtplib
 import sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -83,7 +84,7 @@ def send_email(secret_santa, debug):
     password = os.getenv("SMTP_PASSWORD")
     message = MIMEMultipart("alternative")
     current_year = datetime.datetime.now(
-        tz=datetime.timezone.tzname("America/Chicago")
+        tz=ZoneInfo("America/Chicago")
     ).year
     message["Subject"] = f"Your Secret Santa has Arrived for {current_year}!"
     message["From"] = sender_email
