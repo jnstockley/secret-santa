@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13, <4.0"
 dependencies = [
     "pandas==3.0.5",
-    "python-dotenv==1.2.2",
+    "python-dotenv==1.2.3",
 ]
 license-files = ["LICENSE"]
 authors = [
@@ -16,12 +16,6 @@ keywords = ["starter", "template", "python"]
 classifiers = [
     "Programming Language :: Python :: 3",
 ]
-<<<<<<< HEAD
-=======
-dependencies = [
-    "python-dotenv==1.2.3",
-]
->>>>>>> external/main
 [project.urls]
 Homepage = "https://github.com/jnstockley/python-starter"
 Repository = "https://github.com/jnstockley/python-starter.git"
